@@ -263,7 +263,7 @@ a-section .cont{
   text-align: center;
   line-height: 30rpx;
   font-size: 30rpx;
-  color: #b4282d;
+  color: #D33775;
 }
 
 .a-popular {
@@ -359,7 +359,7 @@ a-section .cont{
 .a-popular .b .price {
   width: 456rpx;
   display: block;
-  color: #b4282d;
+  color: #D33775;
   line-height: 50rpx;
   font-size: 33rpx;
   margin-top: 30rpx;
@@ -404,7 +404,7 @@ a-section .cont{
 
 .a-topic .b .np .price {
   margin-left: 20.8rpx;
-  color: #b4282d;
+  color: #D33775;
 }
 
 .a-topic .b .desc {
@@ -544,7 +544,7 @@ a-section .cont{
   height: 30rpx;
   text-align: center;
   font-size: 30rpx;
-  color: #b4282d;
+  color: #D33775;
 }
 
 .good-grid .more-item{
@@ -575,7 +575,7 @@ a-section .cont{
   height: 70rpx;
 }
 .dzprice{ 
-  color: #b4282d;
+  color: #D33775;
 }
 .yjprice{
   margin-left: 30rpx;
@@ -628,7 +628,7 @@ a-section .cont{
   text-align: center;
 }
 .centerUser text{
-  color: #b4282d;
+  color: #D33775;
 }
 .common{
   display:flex;
@@ -664,7 +664,7 @@ a-section .cont{
   line-height: 100rpx;  */
 }
 .txinfo{
-  color: #b4282d;
+  color: #D33775;
 }
 .jrtime{
   margin-left: 30rpx;
@@ -792,7 +792,7 @@ a-section .cont{
 }
 
 .add-address .save{
-    background: #b4282d;
+    background: #D33775;
 }
 
 
@@ -857,7 +857,7 @@ a-section .cont{
 }
 
 .region-select .region-selected .item.selected{
-  color: #b4282d;
+  color: #D33775;
 }
 
 .region-select .done{
@@ -900,7 +900,7 @@ a-section .cont{
 }
 
 .region-select .region-list .item.selected{
-  color: #b4282d;
+  color: #D33775;
 }
 
 
@@ -935,7 +935,7 @@ a-section .cont{
 }
 
 .category-select .region-selected .item.selected{
-  color: #b4282d;
+  color: #D33775;
 }
 
 .category-select .done{
@@ -978,7 +978,7 @@ a-section .cont{
 }
 
 .category-select .region-list .item.selected{
-  color: #b4282d;
+  color: #D33775;
 }
 
 .attribute-select .hd{
@@ -1012,7 +1012,7 @@ a-section .cont{
 }
 
 .attribute-select .region-selected .item.selected{
-  color: #b4282d;
+  color: #D33775;
 }
 
 .attribute-select .done{
@@ -1055,7 +1055,7 @@ a-section .cont{
 }
 
 .attribute-select .region-list .item.selected{
-  color: #b4282d;
+  color: #D33775;
 }
 
 .bg-mask{
@@ -1121,5 +1121,5 @@ a-section .cont{
   height: 30rpx;
   text-align: center;
   font-size: 30rpx;
-  color: #b4282d;
+  color: #D33775;
 }

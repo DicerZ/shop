@@ -63,7 +63,7 @@ page ,.container{
     height: 27rpx;
     line-height: 27rpx;
     overflow: hidden;
-    color: #b4282d;
+    color: #D33775;
     font-size: 27rpx;
 }
 

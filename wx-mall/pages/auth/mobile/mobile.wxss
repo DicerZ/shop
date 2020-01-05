@@ -157,7 +157,7 @@
   line-height: 84rpx;
   width: 250rpx;
   font-size: 30rpx;
-  background-color:#b4282d;
+  background-color:#D33775;
   color:#ffffff;
 }
 

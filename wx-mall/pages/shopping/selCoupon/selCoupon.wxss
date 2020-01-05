@@ -74,7 +74,7 @@ page{
   height: 70rpx;
   border:none;
   width: 168rpx;
-  background: #b4282d;
+  background: #D33775;
   border-radius: 0;
   line-height: 70rpx;
   color: #fff;

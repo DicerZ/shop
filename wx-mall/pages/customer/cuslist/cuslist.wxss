@@ -59,7 +59,7 @@
     height: 43rpx;
     line-height: 43rpx;
     float: right;
-    color: #b4282d;
+    color: #D33775;
 }
 .btnBox{
   width: 50%;
@@ -93,14 +93,14 @@
 }
 .num{
   font-size: 14px;
-  color: #b4282d;
+  color: #D33775;
 }
 .wselcolor{
   color: #666;
 }
 .selcolor{
-  border:1px solid #b4282d;
-  color: #b4282d;
+  border:1px solid #D33775;
+  color: #D33775;
 }
 .search-header .selValue button:nth-child(1){
   margin-left: 0;

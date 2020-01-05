@@ -39,6 +39,9 @@
         <if test="merchantId != null ">
             and merchant_id=#{merchantId}
         </if>
+        <if test="name != null ">
+            and name=#{name}
+        </if>
         <choose>
             <when test="sidx != null and sidx.trim() != ''">
                 order by ${sidx} ${order}

@@ -28,6 +28,10 @@ Page({
       id: '',
       name: ''
     },
+    all: {
+      id: 0,
+      name: "全部"
+    },
     addressId: 0,
     openSelectRegion: false,
     openSelectCategory: false,
@@ -202,10 +206,10 @@ Page({
      
       if (res.errno === 0) {
         var list = res.data
+        list.push(that.data.all)
         that.setData({
           attributeList: list.reverse()
         })
-        console.log(that.data.attributeList)
       }
     });
   },
@@ -239,10 +243,10 @@ Page({
       selectRegionList[1].parent_id = address.province_id;
       this.setData({
         selectRegionList: selectRegionList,
-        regionType: 2
+        regionType: 1
       });
-
-      this.getRegionList(address.city_id);
+      this.getRegionList(1);
+      // this.getRegionList(address.city_id);
     } else {
       this.setData({
         selectRegionList: [{
@@ -348,7 +352,7 @@ Page({
     var that = this;
     var attributeItem;
     let attributeIndex = event.target.dataset.attributeIndex;
-    console.log(attributeIndex)
+    // console.log(attributeIndex)
     for (let i = 0; i < this.data.attributeList.length; i++) {
       if (this.data.attributeList[i].id == attributeIndex) {
         attributeItem = this.data.attributeList[i];
@@ -381,7 +385,6 @@ Page({
     let regionType = regionItem.type;
     let selectRegionList = this.data.selectRegionList;
     selectRegionList[regionType - 1] = regionItem;
-
     // if (regionType != 3) {
     if (regionType != 2) {
       this.setData({
@@ -514,46 +517,116 @@ Page({
     new Promise(function(resolve, reject) {
       var qqmapsdk;
       // 获取当前经纬度
-      wx.getLocation({
-        type: 'gcj02',
-        success(res) {
-          var latitude = res.latitude
-          var longitude = res.longitude
-          that.setData({
-            latitude: res.latitude,
-            longitude: res.longitude
-          })
-          qqmapsdk = new QQMapWX({
-              key: 'YOUBZ-JLSW2-4MFU7-CRHQG-NAZJT-QVB34'
-            }),
-            qqmapsdk.reverseGeocoder({
-              location: {
-                latitude: latitude,
-                longitude: longitude,
-              },
-              success: function(addressRes) {
-                var province = addressRes.result.address_component.province;
-                var city = addressRes.result.address_component.city;
-                app.globalData.province = province
-                app.globalData.city = city
-
-                let address = that.data.address;
-                address.full_region = app.globalData.city
-                that.setData({
-                  address: address,
-                });
-                that.getGoodsList();
-              }
-            })
+      wx.getSetting({
+        success: (res) => {
+          // console.log(res.authSetting["scope.userLocation"])
+            if (res.authSetting["scope.userLocation"]) {////如果用户重新同意了授权登录
+              // console.log("-----------")
+              wx.getLocation({
+                type: 'gcj02',
+                success(res) {
+                  var latitude = res.latitude
+                  var longitude = res.longitude
+                  that.setData({
+                    latitude: res.latitude,
+                    longitude: res.longitude
+                  })
+                  qqmapsdk = new QQMapWX({
+                      key: 'YOUBZ-JLSW2-4MFU7-CRHQG-NAZJT-QVB34'
+                    }),
+                    qqmapsdk.reverseGeocoder({
+                      location: {
+                        latitude: latitude,
+                        longitude: longitude,
+                      },
+                      success: function(addressRes) {
+                        var province = addressRes.result.address_component.province;
+                        var city = addressRes.result.address_component.city;
+                        app.globalData.province = province
+                        app.globalData.city = city
+        
+                        let address = that.data.address;
+                        address.full_region = app.globalData.city
+                        that.setData({
+                          address: address,
+                        });
+                        that.getGoodsList();
+                      }
+                    })
+                }
+              });
+            }else{
+              wx.showModal({
+                title: '请求授权当前位置',
+                content: '需要获取您的地理位置，请确认授权',
+                success: function (res) {
+                  if (res.cancel) {
+                    wx.showToast({
+                      title: '拒绝授权',
+                      icon: 'none',
+                      duration: 1000
+                    })
+                  } else if (res.confirm) {
+                    wx.getLocation({
+                      type: 'gcj02',
+                      success(res) {
+                        var latitude = res.latitude
+                        var longitude = res.longitude
+                        that.setData({
+                          latitude: res.latitude,
+                          longitude: res.longitude
+                        })
+                        qqmapsdk = new QQMapWX({
+                            key: 'YOUBZ-JLSW2-4MFU7-CRHQG-NAZJT-QVB34'
+                          }),
+                          qqmapsdk.reverseGeocoder({
+                            location: {
+                              latitude: latitude,
+                              longitude: longitude,
+                            },
+                            success: function(addressRes) {
+                              var province = addressRes.result.address_component.province;
+                              var city = addressRes.result.address_component.city;
+                              app.globalData.province = province
+                              app.globalData.city = city
+                              let address = that.data.address;
+                              address.full_region = app.globalData.city
+                              that.setData({
+                                address: address,
+                              });
+                              that.getGoodsList();
+                            },
+                            fail:function(){
+                              wx.showToast({
+                                title: '决绝1',
+                                icon: 'none',
+                                duration: 1000
+                              })
+                            }
+                          })
+                      },
+                      fail:function(){
+                        wx.showToast({
+                          title: '决绝',
+                          icon: 'none',
+                          duration: 1000
+                        })
+                      }
+                    });
+                  }
+                }
+              })
+            }
         }
-      });
+    })
+      
 
     }).then(function() {
 
     })
     let categoryName = that.data.categoryName;
     let attributeName = that.data.attributeName;
-    categoryName = '全部'
+    categoryName = '电信'
     attributeName = '全部',
       that.setData({
         categoryName: categoryName,

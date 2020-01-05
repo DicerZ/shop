@@ -98,12 +98,12 @@
 }
 .goods-info .dzprice{
   font-size: 40rpx;
-  color: #b4282d;
+  color: #D33775;
   font-weight:bold;
 }
 .goods-info .yjprice{
   margin-left: 20rpx;
-  text-decoration: line-through; 
+  /* text-decoration: line-through;  */
 }
 .goods-info .brokerage{
   margin-left: 30rpx;
@@ -115,7 +115,7 @@
 }
 
 .dzpricen{
-  color: #b4282d;
+  color: #D33775;
 }
 
 .yjpricen{
@@ -284,7 +284,7 @@
 .groupBox .ptlist .proli .right .gopt button{
   font-size: 13px;
   color: #fff;
-  background: #b4282d;
+  background: #D33775;
   width: 150rpx;
   height: 60rpx;
   line-height: 60rpx;
@@ -528,7 +528,7 @@
   display: block;
   height: 8rpx;
   width: 8rpx;
-  background: #b4282d;
+  background: #D33775;
   border-radius: 50%;
   margin-top: 11rpx;
 }
@@ -631,7 +631,7 @@
   height: 30rpx;
   text-align: center;
   font-size: 30rpx;
-  color: #b4282d;
+  color: #D33775;
 }
 
 .bottom-btn{
@@ -687,7 +687,7 @@
     position: absolute;
     top: 0;
     right:0;
-    background: #b4282d;
+    background: #D33775;
     text-align: center;
     font-size: 18rpx;
     color: #fff;
@@ -724,8 +724,8 @@
 }
 
 .bottom-btn .r{
-    border:1px solid #b4282d;
-    background: #b4282d;
+    border:1px solid #D33775;
+    background: #D33775;
     float: left;
     height: 100rpx;
     line-height: 96rpx;
@@ -816,8 +816,8 @@
 }
 
 .spec-con .value.selected{
-    border: 1px solid #b4282d;
-    color: #b4282d;
+    border: 1px solid #D33775;
+    color: #D33775;
 }
 .number-item{
   margin-bottom: 50rpx;
@@ -1009,7 +1009,7 @@ button{
 }
 .couponBox .couponInfo .conLi .left text{
   margin-bottom: 20rpx;
-  color: #b4282d;
+  color: #D33775;
 }
 .couponBox .couponInfo .conLi .left .price{
    font-weight: bold;
@@ -1022,7 +1022,7 @@ button{
 .couponBox .couponInfo .conLi .right text{
    width: 50rpx;
   height: 100%;
-  color: #b4282d;
+  color: #D33775;
   margin-right: 25rpx;
   display: block;
 }
@@ -1089,7 +1089,7 @@ button{
 .proli .right .gopt button{
   font-size: 13px;
   color: #fff;
-  background: #b4282d;
+  background: #D33775;
   width: 140rpx;
   height: 50rpx;
   line-height: 50rpx;
@@ -1166,7 +1166,7 @@ button{
   height: 80rpx;
   line-height: 80rpx;
   margin: 0 auto;
-  background: #b4282d;
+  background: #D33775;
   color: #fff;
   border-radius: 20rpx;
 }

@@ -357,7 +357,7 @@ page{
     position: absolute;
     top: 0;
     right:0;
-    background: #b4282d;
+    background: #D33775;
     text-align: center;
     font-size: 18rpx;
     color: #fff;
@@ -394,8 +394,8 @@ page{
 }
 
 .bottom-btn .r{
-    border:1px solid #b4282d;
-    background: #b4282d;
+    border:1px solid #D33775;
+    background: #D33775;
     float: left;
     height: 100rpx;
     line-height: 96rpx;
@@ -451,6 +451,6 @@ page{
     text-align: center;
     line-height: 100rpx;
     font-size: 29rpx;
-    background: #b4282d;
+    background: #D33775;
     color: #fff;
 }

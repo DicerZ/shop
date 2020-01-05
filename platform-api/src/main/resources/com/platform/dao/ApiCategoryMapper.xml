@@ -43,6 +43,9 @@
         <if test="notName != null and notName != null">
             and 'name' != #{notName}
         </if>
+         <if test="name != null ">
+            and name=#{name}
+        </if>
         <if test="ids != null">
             and id in
             <foreach item="item" collection="ids" open="(" separator="," close=")">

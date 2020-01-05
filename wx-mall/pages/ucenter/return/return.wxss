@@ -16,7 +16,7 @@ page{
   text-align: center;
 }
 .order_me .li.active{
-  border-bottom: 2px solid #b4282d;
+  border-bottom: 2px solid #D33775;
   font-size: 16px;
 }
 
@@ -45,9 +45,9 @@ page{
   text-align:center;
   padding:0 35rpx; 
   font-size:26rpx;
-  color:#b4282d;
+  color:#D33775;
   background:none;
-  border:1px solid #b4282d;
+  border:1px solid #D33775;
   border-radius:30rpx;
 
 } 
@@ -75,7 +75,7 @@ page{
 .order-goods .h .status{
     float: right;
     font-size: 30rpx;
-    color: #b4282d;
+    color: #D33775;
 }
 
 .order-goods .item{

@@ -76,7 +76,7 @@ page{
 }
 
 .add-address .save{
-    background: #b4282d;
+    background: #D33775;
 }
 
 
@@ -121,7 +121,7 @@ page{
 }
 
 .region-select .region-selected .item.selected{
-  color: #b4282d;
+  color: #D33775;
 }
 
 .region-select .done{
@@ -173,7 +173,7 @@ page{
 }
 
 .region-select .region-list .item.selected{
-  color: #b4282d;
+  color: #D33775;
 }
 
 

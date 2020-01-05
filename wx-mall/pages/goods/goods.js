@@ -48,11 +48,27 @@ Page({
     groupNum: 0,
     groupBuyingId: ''
   },
+  addShareGoods: function () {
+    let that = this;
+    const param={};
+    param.goodsId = that.data.goods.id
+    param.name = that.data.goods.name
+    param.goodsBrief = that.data.goods.goods_brief || ''
+    param.retailPrice = that.data.goods.retail_price
+    param.marketPrice = that.data.goods.market_price
+    console.log("------ffff:", JSON.stringify(param))
+    // util.request(api.InsShareGoods, param, "POST", 'application/x-www-form-urlencoded').then(function (res) { 
+    //   console.log("------rrrrr:", res)
+    //   if (res.errno === 0) { 
+    //     console.log("------chenggong")
+    //   }
+    // });
+  },
   onShareAppMessage: function() {
     this.addShareGoods()
     const share_obj = {
       title: this.data.goods.name,
-      imageUrl: this.data.goods.list_pic_url,
+      // imageUrl: this.data.goods.list_pic_url,
       path: 'pages/goods/goods?id=' + this.data.id + '&userId=' + wx.getStorageSync('uId')
     }
     return share_obj

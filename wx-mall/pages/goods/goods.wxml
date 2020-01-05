@@ -17,7 +17,7 @@
         </view>
         <view class="tx price">
           <text class='pri dzprice'>￥{{type==1?goods.group_price ||'0.00':goods.retail_price || '0.00'}}</text>
-          <text class='pri yjprice'>原价：￥{{type==1?goods.retail_price ||'0.00':goods.market_price || '0.00'}}</text>
+          <text class='pri yjprice'>含：{{type==1?goods.retail_price ||'0.00':(goods.market_price/2) || '0.00'}}元话费</text>
           <!-- <text class='pri brokerage'>佣金：￥{{goods.user_brokerage_price || '0.00'}}</text> -->
           <button open-type="share" class='icon_fx'></button>
         </view>

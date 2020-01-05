@@ -73,14 +73,14 @@
     <view class='menu_tit'>
       <text class='menu_top'>我的服务</text>
     </view>
-    <button class='service' open-type="share">
+    <!-- <button class='service' open-type="share">
       <view class="item no-border">
         <navigator url="url" class="a">
           <text class="icon fyq"></text>
           <text class="txt">邀请好友</text>
         </navigator>
       </view>
-    </button>
+    </button> -->
     <!-- <view class="item">
       <navigator url="/pages/ucenter/coupon/coupon" class="a">
         <text class="icon coupon"></text>

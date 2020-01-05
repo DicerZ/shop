@@ -327,7 +327,7 @@
                 order by ${sidx} ${order}
             </when>
             <otherwise>
-                order by nideshop_goods.id desc
+                order by nideshop_goods.retail_price desc
             </otherwise>
         </choose>
         <if test="offset != null and limit != null">

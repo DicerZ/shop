@@ -16,7 +16,7 @@ page{
   text-align: center;
 }
 .order_me .li.active{
-  border-bottom: 2px solid #b4282d;
+  border-bottom: 2px solid #D33775;
   font-size: 18px;
 }
 
@@ -51,8 +51,8 @@ page{
   margin-left:15rpx;
 }
 .gopay{
-  color:#b4282d;
-  border:1px solid #b4282d;
+  color:#D33775;
+  border:1px solid #D33775;
 }
 .gocancel{
   color:#666;
@@ -82,7 +82,7 @@ page{
 .order-goods .h .status{
     float: right;
     font-size: 30rpx;
-    color: #b4282d;
+    color: #D33775;
 }
 
 .order-goods .item{

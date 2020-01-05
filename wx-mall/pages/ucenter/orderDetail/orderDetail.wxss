@@ -54,7 +54,7 @@ page{
 }
 
 .item-c .cost{
-    color: #b4282d;
+    color: #D33775;
 }
 
 .item-c .btn{
@@ -67,7 +67,7 @@ page{
 }
 
 .item-c .btn.active{
-    background: #b4282d;
+    background: #D33775;
     color: #fff;
 }
 
@@ -93,7 +93,7 @@ page{
 .order-goods .h .status{
     float: right;
     font-size: 30rpx;
-    color: #b4282d;
+    color: #D33775;
 }
 
 .order-goods .item{
@@ -245,11 +245,11 @@ page{
 .order-bottom .pay-fee .label{
     display: inline-block;
     width: 140rpx;
-    color: #b4282d;
+    color: #D33775;
 }
 
 .order-bottom .pay-fee .txt{
     display: inline-block;
     width: 140rpx;
-    color: #b4282d;
+    color: #D33775;
 }

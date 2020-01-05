@@ -92,7 +92,7 @@ flex: 1;
 }
 
 .add-address .save{
-    background: #b4282d;
+    background: #D33775;
 }
 
 
@@ -137,7 +137,7 @@ flex: 1;
 }
 
 .region-select .region-selected .item.selected{
-  color: #b4282d;
+  color: #D33775;
 }
 
 .region-select .done{
@@ -183,7 +183,7 @@ flex: 1;
 }
 
 .region-select .region-list .item.selected{
-  color: #b4282d;
+  color: #D33775;
 }
 
 

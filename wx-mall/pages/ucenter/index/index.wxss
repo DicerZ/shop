@@ -63,7 +63,7 @@ button{
   height: 50rpx; 
   line-height: 40rpx;
   font-size: 30rpx;
-  color:#b4282d;
+  color:#D33775;
   float: left;
   background: none;
 }
@@ -140,7 +140,7 @@ button{
   line-height: 50rpx;
   width: 100%;
   font-size: 24rpx;
-  color:#b4282d;
+  color:#D33775;
 }
 
 .profile-info{
@@ -369,7 +369,7 @@ button{
 }
 
 .comCol{
-   color:#b4282d; 
+   color:#D33775; 
    font-weight: bold;
    font-size: 28rpx;
 }

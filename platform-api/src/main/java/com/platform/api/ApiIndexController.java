@@ -224,13 +224,34 @@ public class ApiIndexController extends ApiBaseAction {
     public Object list(@RequestParam(value = "page", defaultValue = "1") Integer page,
                        @RequestParam(value = "size", defaultValue = "20") Integer size,
                        Integer category_id,Integer brand_id,String attribute_category,String keywords) {
-    	System.out.println(keywords + "--------keywords");
+//    	System.out.println(keywords + "--------keywords");
+//    	System.out.println(category_id + "--------category_id");
+//    	System.out.println(brand_id + "--------brand_id");
+//    	System.out.println(attribute_category + "--------attribute_category");
     	//查询城市id
     	Map params = new HashMap();
     	params.put("name", attribute_category);
     	List<AttributeCategoryVo> attributeCategoryList = attributeCategoryService.queryList(params);
     	AttributeCategoryVo attributeCategory =  attributeCategoryList.get(0);
     	Integer attribute_category_id = attributeCategory.getId();
+//    	if(brand_id == 0) {
+//    		//查询AAA id
+//        	params = new HashMap();
+//        	params.put("name", "AAA");
+//        	List<BrandVo> brandList = brandService.queryList(params);
+//        	BrandVo brand =  brandList.get(0);
+//        	brand_id = brand.getId();
+//    	}
+    	if(category_id == 0) {
+    		//查询电信 id
+        	params = new HashMap();
+        	params.put("name", "电信");
+        	List<CategoryVo> categoryList = categoryService.queryList(params);
+        	if(categoryList.size() != 0) {
+        		CategoryVo category =  categoryList.get(0);
+            	category_id = category.getId();
+        	}
+    	}
     	//查询列表数据
         params = new HashMap();
         params.put("fields", "id, name, retail_price, app_list_pic_url");
@@ -240,53 +261,9 @@ public class ApiIndexController extends ApiBaseAction {
         params.put("attribute_category",attribute_category_id);
         params.put("page", page);
         params.put("limit", size);
-        params.put("sidx", "id");
-        params.put("order", "asc");
-    	
-    	
-//    	if (category_id == 0 && brand_id == 0 ) {
-//    		//查询列表数据
-//            params = new HashMap();
-//            params.put("fields", "id, name, retail_price, app_list_pic_url");
-//            params.put("attribute_category",attribute_category_id);
-//            params.put("page", page);
-//            params.put("limit", size);
-//            params.put("sidx", "id");
-//            params.put("order", "asc");
-//            
-//    	}else if(category_id == 0 && brand_id != 0) {
-//    		//查询列表数据
-//            params = new HashMap();
-//            params.put("fields", "id, name, retail_price, app_list_pic_url");
-//            params.put("brand_id", brand_id);
-//            params.put("attribute_category",attribute_category_id);
-//            params.put("page", page);
-//            params.put("limit", size);
-//            params.put("sidx", "id");
-//            params.put("order", "asc");
-//    	}else if(category_id != 0 && brand_id == 0) {
-//    		//查询列表数据
-//            params = new HashMap();
-//            params.put("fields", "id, name, retail_price, app_list_pic_url");
-//            params.put("category_id", category_id);
-//            params.put("attribute_category",attribute_category_id);
-//            params.put("page", page);
-//            params.put("limit", size);
-//            params.put("sidx", "id");
-//            params.put("order", "asc");
-//    	}else {
-//    		//查询列表数据
-//            params = new HashMap();
-//            params.put("fields", "id, name, retail_price, app_list_pic_url");
-//            params.put("category_id", category_id);
-//            params.put("brand_id", brand_id);
-//            params.put("attribute_category",attribute_category_id);
-//            params.put("page", page);
-//            params.put("limit", size);
-//            params.put("sidx", "id");
-//            params.put("order", "asc");
-//    	}
-    	
+        params.put("sidx", "brand_id");
+        params.put("order", "desc");
+        
     	Query query = new Query(params);
         List<GoodsVo> goodsList = goodsService.queryFxList(query);
         int total = goodsService.queryTotal(query);
