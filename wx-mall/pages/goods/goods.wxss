@@ -100,6 +100,7 @@
   font-size: 40rpx;
   color: #D33775;
   font-weight:bold;
+  font-family: "Microsoft Yahei", Arial
 }
 .goods-info .yjprice{
   margin-left: 20rpx;
@@ -128,6 +129,7 @@
   margin-bottom:5.208rpx;
   font-size:50rpx; 
   font-weight:bold;
+  font-family: "Microsoft Yahei", Arial
 }
 
 .goods-info .desc{
@@ -148,13 +150,14 @@
 .goods-info .brand text{
     display: inline-block;
     width: auto;
-    padding: 2px 30rpx 2px 10.5rpx;
+    padding: 2px 15rpx 2px 10.5rpx;
+    margin-right: 25rpx;
     line-height: 35.5rpx;
-    border: 1px solid #f48f18;
+    border: 1px solid #D33775;
     font-size: 25rpx;
-    color: #f48f18;
+    color: #D33775;
     border-radius: 4px;
-    background: url(http://nos.netease.com/mailpub/hxm/yanxuan-wap/p/20150730/style/img/icon-normal/detailTagArrow-18bee52dab.png) 95% center no-repeat;
+   
     background-size: 10.75rpx 18.75rpx;
 }
 

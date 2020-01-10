@@ -19,6 +19,9 @@
         <if test="name != null">
         	and `name` = #{name}
         </if>
+        <if test="id != null">
+        	and `id` = #{id}
+        </if>
         <choose>
             <when test="sidx != null and sidx.trim() != ''">
                 order by ${sidx} ${order}

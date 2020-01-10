@@ -33,6 +33,7 @@ Page({
     yprice: 0,
     proId: 0,
     proImg: '',
+    region: '',
     openAttr: false,
     openCoupon: false,
     openGroup: false,
@@ -275,7 +276,8 @@ Page({
           brand: res.data.brand,
           specificationList: res.data.specificationList,
           productList: res.data.productList,
-          userHasCollect: res.data.userHasCollect
+          userHasCollect: res.data.userHasCollect,
+          region: res.data.region
         });
         //设置默认值
         that.setDefSpecInfo(that.data.specificationList);
@@ -629,7 +631,7 @@ Page({
         return false;
       }
       wx.showLoading({
-        title: '提交中',
+        title: '提交中 请耐心等待',
       })
       let that = this;
       var img1 = this.data.frontImg[0]["src"]

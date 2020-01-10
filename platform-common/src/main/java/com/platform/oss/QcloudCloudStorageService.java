@@ -49,15 +49,36 @@ public class QcloudCloudStorageService extends CloudStorageService {
 
 	}
 
+//	@Override
+//	public String upload(MultipartFile file) throws Exception {
+//
+//		String fileName = file.getOriginalFilename();
+//		
+//		String prefix = fileName.substring(fileName.lastIndexOf(".") + 1);
+//		System.out.println(fileName);
+//		System.out.println(prefix);
+//		return upload(file.getInputStream(), getPath(config.getQcloudPrefix()) + "." + prefix);
+//		//===========================================请看这里==========================================
+//		//把原始名字作为参数在这里，重写getPath函数
+//		//就能获取原本的名字
+//		
+//	}
+	
 	@Override
 	public String upload(MultipartFile file) throws Exception {
 
 		String fileName = file.getOriginalFilename();
 		
-		String prefix = fileName.substring(fileName.lastIndexOf(".") + 1);
+//		String prefix = fileName.substring(fileName.lastIndexOf(".") + 1);
+		String prefix = fileName;
 		System.out.println(fileName);
 		System.out.println(prefix);
-		return upload(file.getInputStream(), getPath(config.getQcloudPrefix()) + "." + prefix);
+//		return upload(file.getInputStream(), getPath(config.getQcloudPrefix()) + "." + prefix);
+		return upload(file.getInputStream(), getPath(config.getQcloudPrefix()) + prefix);
+		//===========================================请看这里==========================================
+		//把原始名字作为参数在这里，重写getPath函数
+		//就能获取原本的名字
+		
 	}
 
 	@Override

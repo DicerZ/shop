@@ -31,7 +31,9 @@ public abstract class CloudStorageService {
         //生成uuid
         String uuid = UUID.randomUUID().toString().replaceAll("-", "");
         //文件路径
-        String path = DateUtils.format(new Date(), "yyyyMMdd") + "/" + DateUtils.format(new Date(), "HHmmssS") + uuid.substring(0, 5);
+//        String path = DateUtils.format(new Date(), "yyyyMMdd") + "/" + DateUtils.format(new Date(), "HHmmssS") + uuid.substring(0, 5);
+        
+        String path = "";
 
         if (StringUtils.isNotBlank(prefix)) {
             path = prefix + "/" + path;
@@ -47,6 +49,12 @@ public abstract class CloudStorageService {
      * @return 返回http地址
      */
     public abstract String upload(MultipartFile file) throws Exception;
+    //================================================请看这里=======================================
+    //这个抽象函数有三个实现类（鼠标悬停，按住ctrl），，，，，，，，，，，他们调用了getpath
+    //把原始的文件名作为参数传进来就可以了，重写一下getpath函数
+    //我是这么想的哦，行不行我就不知道，，，，，，，，，，，，，，，，，，，，，再见！
+    
+    
 
     /**
      * 文件上传

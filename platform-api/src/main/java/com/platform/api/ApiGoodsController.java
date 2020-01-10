@@ -82,6 +82,8 @@ public class ApiGoodsController extends ApiBaseAction {
     private ApiCartService cartService;
     @Autowired
     private MlsUserSer mlsUserSer;
+    @Autowired
+    private ApiAttributeCategoryService attributeCategoryService;
     
     //上传文件集合   
     private List<File> file;   
@@ -300,6 +302,14 @@ public class ApiGoodsController extends ApiBaseAction {
         }
         footprintService.save(footprintEntity);
         //
+       //查询城市name
+    	Map params = new HashMap();
+    	
+    	params.put("id", info.getAttribute_category());
+    	List<AttributeCategoryVo> attributeCategoryList = attributeCategoryService.queryList(params);
+    	AttributeCategoryVo attributeCategory =  attributeCategoryList.get(0);
+    	String attribute_category = attributeCategory.getName();
+    	System.out.println("-----"+attribute_category);
         resultObj.put("info", info);
         resultObj.put("gallery", gallery);
         resultObj.put("attribute", attribute);
@@ -309,10 +319,11 @@ public class ApiGoodsController extends ApiBaseAction {
         resultObj.put("brand", brand);
         resultObj.put("specificationList", specificationList);
         resultObj.put("productList", productEntityList);
+        resultObj.put("region", attribute_category);
         // 记录推荐人是否可以领取红包，用户登录时校验
         try {
             // 是否已经有可用的转发红包
-            Map params = new HashMap();
+            params = new HashMap();
             params.put("user_id", userId);
             params.put("send_type", 2);
             params.put("unUsed", true);

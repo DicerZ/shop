@@ -295,7 +295,7 @@
         <if test="name != null and name != ''">
             and nideshop_goods.'name' like concat('%',#{keyword},'%')
         </if>
-        <if test="category_id != null and category_id != ''">
+        <if test="category_id != null and category_id != 0">
             and nideshop_goods.category_id = #{category_id}
         </if>
         <if test="keywords != null and keywords != ''">

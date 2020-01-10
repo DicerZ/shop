@@ -36,6 +36,13 @@ public class QiniuCloudStorageService extends CloudStorageService {
                 uploadToken(config.getQiniuBucketName());
     }
 
+//    @Override
+//    public String upload(MultipartFile file) throws Exception {
+//        String fileName = file.getOriginalFilename();
+//        String prefix = fileName.substring(fileName.lastIndexOf(".") + 1);
+//        return upload(file.getBytes(), getPath(config.getQiniuPrefix()) + "." + prefix);
+//    }
+    
     @Override
     public String upload(MultipartFile file) throws Exception {
         String fileName = file.getOriginalFilename();

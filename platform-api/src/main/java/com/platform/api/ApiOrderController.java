@@ -7,6 +7,7 @@ import com.platform.entity.OrderGoodsVo;
 import com.platform.entity.OrderVo;
 import com.platform.entity.UserCouponVo;
 import com.platform.entity.UserVo;
+import com.platform.oss.OSSFactory;
 import com.platform.service.*;
 import com.platform.util.ApiBaseAction;
 import com.platform.util.ApiPageUtils;
@@ -178,16 +179,24 @@ public class ApiOrderController extends ApiBaseAction {
                 // 取得当前上传文件的名称
                 String myFileName = mf.getOriginalFilename();
                 // 如果名称不为""，说明该文件存在，否则说明文件不存在。
-                if (myFileName.trim() != "") {
-                    System.out.println(myFileName);
-                    // 重命名上传后的文件
-                    String filename = mf.getOriginalFilename();
-                    // 定义上传路劲
-                    String path = "/mnt/tomcat/webapps/picture/" + filename;
-                    File localFile = new File(path);
-                    mf.transferTo(localFile);
-                    sb = sb + path + ",";
-                }
+//                if (myFileName.trim() != "") {
+//                    System.out.println(myFileName);
+//                    // 重命名上传后的文件
+//                    String filename = mf.getOriginalFilename();
+//                    // 定义上传路劲
+//                    String path = "/mnt/tomcat/webapps/picture/" + filename;
+//                    File localFile = new File(path);
+//                    mf.transferTo(localFile);
+//                    sb = sb + path + ",";
+//                }
+              //上传文件
+                try {
+					String url = OSSFactory.build().upload(mf);
+					System.out.println(url+"------------上传图片");
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
             }
         }
         

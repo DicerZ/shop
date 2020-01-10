@@ -74,7 +74,7 @@ page{
 }
 .to-index-btn{
     color:#fff;
-    background:#e64340;
+    background:#D33775;
     border-radius:6px;
     width:300rpx;
     height: auto;
@@ -293,12 +293,12 @@ page{
 }
 
 .cart-view .promotion .tag{
-    border: 1px solid #f48f18;
+    border: 1px solid #D33775;
     height: 37rpx;
     line-height: 31rpx;
     padding: 0 9rpx;
     margin-right: 10rpx;
-    color: #f48f18;
+    color: #D33775;
     font-size: 24.5rpx;
 }
 

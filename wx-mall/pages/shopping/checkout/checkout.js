@@ -271,9 +271,12 @@ Page({
       param.type = that.data.buyType
       param.payType = that.data.type
       param.groupBuyingId = that.data.groupBuyingId
-      param.postscript = 'https://xiaoniao.yongdongai.com/picture/' + that.data.frontImg
-      param.couponId = 'https://xiaoniao.yongdongai.com/picture/' + that.data.backImg
-      param.couponPrice = 'https://xiaoniao.yongdongai.com/picture/' + that.data.catchImg
+      // param.postscript = 'https://xiaoniao.yongdongai.com/picture/' + that.data.frontImg
+      // param.couponId = 'https://xiaoniao.yongdongai.com/picture/' + that.data.backImg
+      // param.couponPrice = 'https://xiaoniao.yongdongai.com/picture/' + that.data.catchImg
+      param.postscript = 'https://cat-1300911149.cos.ap-chengdu.myqcloud.com/' + that.data.frontImg
+      param.couponId = 'https://cat-1300911149.cos.ap-chengdu.myqcloud.com/' + that.data.backImg
+      param.couponPrice =  'https://cat-1300911149.cos.ap-chengdu.myqcloud.com/' + that.data.catchImg
       // param.postscript = 'https://cat.yongdongai.com/picture/' + that.data.frontImg
       // param.couponId = 'https://cat.yongdongai.com/picture/' + that.data.backImg
       // param.couponPrice = 'https://cat.yongdongai.com/picture/' + that.data.catchImg

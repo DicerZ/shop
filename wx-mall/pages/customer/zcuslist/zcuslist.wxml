@@ -2,7 +2,7 @@
 <view class="container"> 
   <view class='cont'>
     <view class='selinfo'>
-      <image class="sel" src="../../../static/images/logo40.png"></image>
+      <image class="sel" src="../../../static/images/logo40.jpg"></image>
       <label>幸运猫 申请获得</label>
     </view>
     <view class='tit'>以下权限</view>

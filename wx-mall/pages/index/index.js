@@ -160,7 +160,6 @@ Page({
     });
   },
   chooseCategory() {
-    let that = this;
     if (this.data.openSelectAttribute) {
       this.setData({
         openSelectAttribute: !this.data.openSelectAttribute
@@ -176,10 +175,13 @@ Page({
       openSelectCategory: !this.data.openSelectCategory
     });
     //请求数据
+    let that = this;
     util.request(api.GoodsAllCategory).then(function(res) {
       if (res.errno === 0) {
+        var list = res.data.allCategory
+        list.push(that.data.all)
         that.setData({
-          categoryList: res.data.allCategory
+          categoryList: list.reverse()
         })
       }
     });
@@ -279,9 +281,27 @@ Page({
       if (res.errno === 0) {
         that.setData({
           regionList: res.data.map(item => {
+           
             return item;
           })
         });
+        if(that.data.regionList.length === 1 || that.data.regionList.length === 2){
+          that.setData({
+            regionList: res.data.map(item => {
+             item.name = that.data.selectRegionList[0].name
+              return item;
+            })
+          });
+        }
+        if(that.data.regionList.length === 2){
+          var city = that.data.regionList.pop()
+          var cityList = [];
+          cityList.push(city)
+          that.setData({
+            regionList: cityList
+             
+          });
+        }
       }
     });
   },
@@ -316,7 +336,6 @@ Page({
     this.getRegionList(selectRegionItem.parent_id);
 
     this.setRegionDoneStatus();
-
   },
   selectCategory(event) {
     var that = this;
@@ -480,7 +499,9 @@ Page({
     address.city_id = selectRegionList[1].id;
     address.province_name = selectRegionList[0].name;
     address.city_name = selectRegionList[1].name;
-    if (address.city_name != '市辖区' && address.city_name != '行政区') {
+    app.globalData.province = address.province_name
+    app.globalData.city = address.city_name
+    if (address.city_name != '上海市' && address.city_name != '重庆市' && address.city_name != '北京市' && address.city_name != '天津市') {
       address.full_region = address.city_name
     } else {
       address.full_region = address.province_name
@@ -488,9 +509,6 @@ Page({
     if( app.globalData.province == app.globalData.city){
       app.globalData.province = address.province_name
       app.globalData.city = '市辖区'
-    }else{
-      app.globalData.province = address.province_name
-      app.globalData.city = address.city_name
     }
     
     this.setData({
@@ -597,20 +615,20 @@ Page({
                               that.getGoodsList();
                             },
                             fail:function(){
-                              wx.showToast({
-                                title: '决绝1',
-                                icon: 'none',
-                                duration: 1000
-                              })
+                              // wx.showToast({
+                              //   title: '决绝1',
+                              //   icon: 'none',
+                              //   duration: 1000
+                              // })
                             }
                           })
                       },
                       fail:function(){
-                        wx.showToast({
-                          title: '决绝',
-                          icon: 'none',
-                          duration: 1000
-                        })
+                        // wx.showToast({
+                        //   title: '决绝',
+                        //   icon: 'none',
+                        //   duration: 1000
+                        // })
                       }
                     });
                   }
@@ -626,7 +644,8 @@ Page({
     })
     let categoryName = that.data.categoryName;
     let attributeName = that.data.attributeName;
-    categoryName = '电信'
+    // categoryName = '电信'
+    categoryName = '全部'
     attributeName = '全部',
       that.setData({
         categoryName: categoryName,
@@ -660,6 +679,14 @@ Page({
       }
       wx.hideNavigationBarLoading() //完成停止加载
       wx.stopPullDownRefresh() //停止下拉刷新
+    });
+  },
+  cancelSelectRegion() {
+    this.setData({
+      openSelectRegion: false,
+      openSelectCategory: false,
+      openSelectAttribute: false,
+      regionType: this.data.regionDoneStatus ? 2 : 1
     });
   },
   onReady: function() {

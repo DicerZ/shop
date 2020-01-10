@@ -242,16 +242,16 @@ public class ApiIndexController extends ApiBaseAction {
 //        	BrandVo brand =  brandList.get(0);
 //        	brand_id = brand.getId();
 //    	}
-    	if(category_id == 0) {
-    		//查询电信 id
-        	params = new HashMap();
-        	params.put("name", "电信");
-        	List<CategoryVo> categoryList = categoryService.queryList(params);
-        	if(categoryList.size() != 0) {
-        		CategoryVo category =  categoryList.get(0);
-            	category_id = category.getId();
-        	}
-    	}
+//    	if(category_id == 0) {
+//    		//查询电信 id
+//        	params = new HashMap();
+//        	params.put("name", "电信");
+//        	List<CategoryVo> categoryList = categoryService.queryList(params);
+//        	if(categoryList.size() != 0) {
+//        		CategoryVo category =  categoryList.get(0);
+//            	category_id = category.getId();
+//        	}
+//    	}
     	//查询列表数据
         params = new HashMap();
         params.put("fields", "id, name, retail_price, app_list_pic_url");
@@ -261,7 +261,7 @@ public class ApiIndexController extends ApiBaseAction {
         params.put("attribute_category",attribute_category_id);
         params.put("page", page);
         params.put("limit", size);
-        params.put("sidx", "brand_id");
+        params.put("sidx", "retail_price");
         params.put("order", "desc");
         
     	Query query = new Query(params);
