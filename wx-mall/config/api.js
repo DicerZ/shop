@@ -3,8 +3,8 @@
 // var NewApiRootUrl = 'http://dev.51shop.ink/multiuser/api/';
 // var NewApiRootUrl = 'http://47.95.223.37:80/platform-framework/api/';
 // var NewApiRootUrl = 'https://xiaoniao.yongdongai.com/platform-framework/api/';
-var NewApiRootUrl = 'https://cat.yongdongai.com/api/';
-// var NewApiRootUrl = 'http://localhost:8080/platform-framework/api/';
+// var NewApiRootUrl = 'https://cat.yongdongai.com/api/';
+var NewApiRootUrl = 'http://localhost:8080/platform-framework/api/';
 //  var NewApiRootUrl = 'http://192.168.2.15:8080/platform-framework/api/';
 // var NewApiRootUrl = 'http://dev.51shop.ink/demo/api/'
 // var NewApiRootUrl = 'https://fx.51shop.ink/drsshop/api/'
