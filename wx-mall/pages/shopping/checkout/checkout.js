@@ -61,11 +61,14 @@ Page({
     }
 
     if (options.photos){
-      var array = options.photos.split(",")
-      var frontImg = array[0].split("/")[3]
-      var backImg = array[1].split("/")[3]
-      var catchImg = array[2].split("/")[3]
+      console.log(options.photos + "----------")
+      var array = options.photos.split(',')
+      console.log(array + "----------")
+      var frontImg = array[0].split("/")[2]
+      var backImg = array[1].split("/")[2]
+      var catchImg = array[2].split("/")[2]
       var img = [frontImg,backImg,catchImg]
+      console.log(frontImg + "传过来的------------")
       this.setData({
         photos: array,
         frontImg: img[0],
@@ -274,7 +277,9 @@ Page({
       // param.postscript = 'https://xiaoniao.yongdongai.com/picture/' + that.data.frontImg
       // param.couponId = 'https://xiaoniao.yongdongai.com/picture/' + that.data.backImg
       // param.couponPrice = 'https://xiaoniao.yongdongai.com/picture/' + that.data.catchImg
+      
       param.postscript = 'https://cat-1300911149.cos.ap-chengdu.myqcloud.com/' + that.data.frontImg
+      console.log(param.postscript + "-------------")
       param.couponId = 'https://cat-1300911149.cos.ap-chengdu.myqcloud.com/' + that.data.backImg
       param.couponPrice =  'https://cat-1300911149.cos.ap-chengdu.myqcloud.com/' + that.data.catchImg
       // param.postscript = 'https://cat.yongdongai.com/picture/' + that.data.frontImg
